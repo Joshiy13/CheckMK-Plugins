@@ -8,7 +8,7 @@ This repository contains a collection of scripts designed to enhance the functio
 - **AdvancedThreatProtectionLicense.sh**: This plugin requests the Experiration Date of the Advanced Threat Protection license of your paloalto firewall, and warns you if it starts running out.
 
 ### /plugins/panorama
-- **NFRSupportLicense**: This plugin requests the experation date of the NFR Support icense of your panorama, and warns you if it starts running out.
+- **NFRSupportLicense.sh**: This plugin requests the experation date of the NFR Support icense of your panorama, and warns you if it starts running out.
 
 ## Usage
 
