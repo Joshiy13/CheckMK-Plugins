@@ -28,4 +28,4 @@ To use these scripts, follow the instructions below:
 
 Feel free to contribute by submitting pull requests or opening issues for any bugs or feature requests.
 
-Happy monitoring!
+**Happy monitoring!**
