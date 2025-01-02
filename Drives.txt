@@ -1,0 +1,34 @@
+$url = 'https://monitoring..com/prod'
+
+Retrieve the stored credential
+$cred = Get-StoredCredential -Target "checkmk"
+
+Check if the credential was retrieved successfully
+if ($cred -ne $null) {
+    $password = $cred.GetNetworkCredential().Password
+    $username = $cred.GetNetworkCredential().UserName
+} else {
+    Write-Error "Stored credential not found for 'checkmk'"
+    # Exit the script or handle the error as appropriate
+    exit
+}
+
+Start the process and open the URL in the default web browser
+Start-Process $url
+
+Wait for the page to load
+Start-Sleep -Seconds 15
+
+Type the username and tab to the password field
+Add-Type -AssemblyName System.Windows.Forms
+System.Windows.Forms.SendKeys::SendWait($username)
+System.Windows.Forms.SendKeys::SendWait("{TAB}")
+
+Type the password and press enter to submit the form
+Start-Sleep -Seconds 1
+Write-Host($password)
+System.Windows.Forms.SendKeys::SendWait("{ENTER}")
+
+Put the webpage to fullscreen
+Start-Sleep -Seconds 1
+System.Windows.Forms.SendKeys::SendWait("{F11}")
